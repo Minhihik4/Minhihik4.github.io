@@ -1,23 +1,23 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="150"/>
+  <img src="https://raw.githubusercontent.com/Minhihik4/Minhihik4/main/code-logo.png" width="150" alt="Minhihik4 Logo"/>
 </p>
 
-# Xin chào, tôi là Minhihik4! 👋
+# Xin chào, tôi là Minhihik4! 👨‍💻
 
-Tôi là một người đam mê công nghệ và sáng tạo 🌌
+- 🌍 Địa điểm: Hải Phòng
+- 📧 Email: minhminh9956@gmail.com
+- 💻 Kỹ năng: JavaScript, HTML
+- 🌟 73 đóng góp trong năm qua
 
-## Về tôi
-- 💻 **Kỹ năng**: JavaScript, Python, HTML/CSS
-- 🌟 **Sở thích**: Xây dựng dự án open-source
-- 📫 **Liên hệ**: [Email](mailto:minhminh9956@gmail.com)
+## Dự án nổi bật
+- [QAIRLINE](https://github.com/Minhihik4/QAIRLINE) - Dự án JavaScript
+- [TKWEB](https://github.com/Minhihik4/TKWEB) - Mẫu JavaScript
 
 ## Thống kê GitHub
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Minhihik4&show_icons=true&theme=dracula)
 
-## Dự án nổi bật
-- [Dự án 1](https://github.com/Minhihik4/project1): Mô tả ngắn
-- [Dự án 2](https://github.com/Minhihik4/project2): Mô tả ngắn
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Minhihik4/Minhihik4/main/space.svg" width="300"/>
+  <a href="https://minhihik4.github.io">
+    <img src="https://img.shields.io/badge/Portfolio-Visit%20Now-green?style=for-the-badge"/>
+  </a>
 </p>
