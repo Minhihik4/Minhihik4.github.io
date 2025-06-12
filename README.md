@@ -9,7 +9,7 @@ Tôi là một người đam mê công nghệ và sáng tạo 🌌
 ## Về tôi
 - 💻 **Kỹ năng**: JavaScript, Python, HTML/CSS
 - 🌟 **Sở thích**: Xây dựng dự án open-source
-- 📫 **Liên hệ**: [Email](mailto:your.email@example.com)
+- 📫 **Liên hệ**: [Email](mailto:minhminh9956@gmail.com)
 
 ## Thống kê GitHub
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Minhihik4&show_icons=true&theme=dracula)
