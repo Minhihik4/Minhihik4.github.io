@@ -8,17 +8,32 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0a0a23;
       color: white;
       overflow-x: hidden;
       text-align: center;
     }
-    #particles-js {
+    .video-background {
       position: fixed;
-      width: 100%;
-      height: 100%;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -2;
+    }
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
     .container {
@@ -75,10 +90,22 @@
       font-size: 0.9em;
       color: #ccc;
     }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="https://raw.githubusercontent.com/Minhihik4/Minhihik4/main/space-background.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="overlay"></div>
+  <canvas id="meteorCanvas"></canvas>
   <div class="container">
     <div class="intro">
       <img src="https://raw.githubusercontent.com/Minhihik4/Minhihik4/main/code-logo.png" alt="Minhihik4 Logo" class="logo">
@@ -93,23 +120,62 @@
       <div class="project-card">TKWEB - JavaScript</div>
     </div>
     <div class="footer">
-      <p>© 2025 Minhihik4 | Cập nhật: 06:23 PM, 12/06/2025</p>
+      <p>© 2025 Minhihik4 | Cập nhật: 06:29 PM, 12/06/2025</p>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        move: { speed: 3, direction: "none", random: true }
-      },
-      interactivity: {
-        events: { onhover: { enable: true, mode: "repulse" } }
+    // Canvas animation cho sao băng
+    const canvas = document.getElementById('meteorCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class Meteor {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height - canvas.height;
+        this.length = Math.random() * 50 + 20;
+        this.speed = Math.random() * 5 + 2;
+        this.opacity = 1;
       }
+      update() {
+        this.y += this.speed;
+        this.opacity -= 0.02;
+        if (this.y > canvas.height || this.opacity <= 0) {
+          this.x = Math.random() * canvas.width;
+          this.y = -this.length;
+          this.opacity = 1;
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x - this.length * 0.7, this.y + this.length);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    const meteors = [];
+    for (let i = 0; i < 20; i++) {
+      meteors.push(new Meteor());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      meteors.forEach(meteor => {
+        meteor.update();
+        meteor.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Điều chỉnh canvas khi thay đổi kích thước cửa sổ
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
   </script>
 </body>
